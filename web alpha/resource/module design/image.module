@@ -1,0 +1,3 @@
+<div class="floral">
+  <img src="resource/img/$filepath" alt=$filename class="beauty" id="$id">
+</div>

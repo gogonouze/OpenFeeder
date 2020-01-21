@@ -1,0 +1,9 @@
+(texte) les baguettes de romain.txt (nav)
+(image) borderlands
+(texte) test
+(texte) test (nav)
+(texte) test
+(graphique) (nav)
+(texte) test
+(image) borderlands (nav)
+(texte) les baguettes de romain (nav)

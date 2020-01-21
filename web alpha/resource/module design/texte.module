@@ -1,0 +1,7 @@
+<div class="splendor" id="$id">
+  <p class="herbOfLife">
+    <?php
+      display($filepath);
+    ?>
+  </p>
+</div>

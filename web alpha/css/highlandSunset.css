@@ -1,0 +1,126 @@
+/* all */
+body {
+	background-color : #81B622;
+}
+
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+	font-size : 90%;
+	font-weight :bold;
+	font-family : Monospace;
+
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+/* text */
+.treeOfLife {
+	color : #BEEF9E;
+	opacity : 1;
+	text-align : center;
+	font-size : 350%;
+	font-weight : bold;
+	font-family : Monospace;
+
+}
+
+.herbOfLife {
+	color : #A3D16E;
+	opacity : 1;
+
+	font-size : 120%;
+	font-weight : bold;
+	font-family : Monospace;
+
+	text-align: justify;
+
+}
+
+
+/* block */
+.ornament {
+	background-color : #8CCC5F;
+
+	margin-left : 20%;
+	margin-right : 20%;
+	margin-top : 2%;
+
+	padding-top : 0.1%;
+	padding-bottom : 0.1%;
+
+	box-shadow: 3px 3px 15px 0px;
+
+}
+
+.compose {
+	list-style-type: none;
+
+	margin-top: 5%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 4%;
+
+	padding: 0%;
+
+	overflow: hidden;
+  background-color: #333;
+
+	box-shadow: 3px 3px 15px 0px;
+
+}
+
+.splendor {
+	background-color : #6AB243;
+
+	margin-left : 3%;
+	margin-right : 3%;
+	margin-top : 4%;
+
+	padding-top : 0.1%;
+	padding-bottom : 0.1%;
+	padding-left: 2%;
+	padding-right: 2%;
+
+	box-shadow: 5px 5px 15px 5px;
+}
+
+
+.floral {
+	margin-left : 3%;
+	margin-right : 3%;
+	margin-top : 4%;
+}
+
+.beauty {
+	display: block;
+	margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+.plain {
+	background-color: #333;
+
+	margin-top: 5%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 4%;
+
+	padding-top: 1%;
+	padding-bottom: 5%;
+
+}
