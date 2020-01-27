@@ -1,3 +1,8 @@
+#language : python 3
+#author : C. Martin, U. EB-LEVADOUX
+#version : 1.0
+#date : 13-10-2019
+
 from shutil import copyfile
 
 

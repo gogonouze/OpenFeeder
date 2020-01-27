@@ -1,18 +1,61 @@
 #language : python 3
 #author : C. Martin, U. EB-LEVADOUX
-#version : 2.0
-#date : 20-01-2020
+#version : 3.0
+#date : 24-01-2020
 
 import os
+import sys
 
 destination_filename = "readyForDataBase"
 
+def dialog_create_directory() :
+    dialog_check = False
+    check = True
+    while (check) :
+        c = input("Voulez vous créer le dossier ? [o]ui ou [n]on\n")
+        if (c.lower() == "o") :
+            dialog_check = True
+            check = False
+        elif (c.lower() == "n") :
+            dialog_check = True
+            check = False
+        else :
+            check = True
+
+    return dialog_check
+
+
 def main() :
-    directory_name = input('Répertoire source : ')
-    destination_directory = input('Répertoire destination : ')
+
+    if (len(sys.argv) < 3 ) :
+        path, script_name = os.path.split(sys.argv[0])
+        print("nombre insuffisant d'arguments.\n<Usage ",script_name," : \"Répertoire source\", \"Répertoire destination\">")
+        return 1;
+    elif (len(sys.argv) > 3 ) :
+        path, script_name = os.path.split(sys.argv[0])
+        print("nombre trop important d'arguments.\n<Usage ",script_name," : \"Répertoire source\", \"Répertoire destination\">")
+        return 1;
+
+    directory_name = sys.argv[1]
+    if (not os.path.isdir(directory_name)) :
+        path, script_name = os.path.split(sys.argv[0])
+        print("Répertoire source introuvable.\n<Usage ",script_name," : \"Répertoire source\", \"Répertoire destination\">")
+        return 2;
+
+
+    destination_directory = sys.argv[2]
+    if (not os.path.isdir(destination_directory)) :
+        path, script_name = os.path.split(sys.argv[0])
+        print("Répertoire destination introuvable.")
+        if (not dialog_create_directory()) :
+            print("Répertoire destination introuvable.\n<Usage ",script_name," : \"Répertoire source\", \"Répertoire destination\">")
+            return 2;
+
+
     raw_contents_paths = raw_directory_files(directory_name)
     process_log_file_list(raw_contents_paths, destination_directory)
     input('\nOpération terminée.\nAppuyez sur ENTRÉE pour terminer...')
+    return 0;
 
 def raw_directory_files(directory_name):
     """Renvoie la liste des chemins vers les fichers à traiter"""
@@ -53,9 +96,9 @@ def process_log_file_list(filepath_list, destination_directory):
 
         log_file.close()
 
-def process_log_file(log_file, destination_directory):
+def process_log_file(log_file, destination_file):
     """Créé un fichier log sans les lignes inutiles"""
-    destination_file = open(os.path.join(destination_directory, destination_filename), "a+")
+    destination_file = open(os.path.join(destination_file, destination_filename), "a+")
     line=' '
     while(line != ''):
         line = log_file.readline()
@@ -64,4 +107,5 @@ def process_log_file(log_file, destination_directory):
     destination_file.close()
 
 #Global
-main()
+if (main() > 0) :
+    input('\nCode interrompu.\nAppuyez sur ENTRÉE pour terminer...')
