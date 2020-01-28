@@ -22,6 +22,6 @@ Projet L3 **[CMI](https://reseau-figure.fr)** (Cursus Master Ingénieur) **Infor
 
 
 ### Auteurs
-* **EB-LEVADOUX Ugo** - *Initial work* - [gogonouze](https://github.com/gogonouze) <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="fr_FR" data-type="horizontal" data-theme="dark" data-vanity="ugo-eb-levadoux"><a class="LI-simple-link" href='https://fr.linkedin.com/in/ugo-eb-levadoux?trk=profile-badge'>Ugo Eb-Levadoux</a></div>
+* **[EB-LEVADOUX Ugo](https://www.linkedin.com/in/ugo-eb-levadoux/)** - *Initial work* - [gogonouze](https://github.com/gogonouze)
 
-* **MARTIN Cédric** - *Initial work* - [HexagoNiin](https://github.com/HexagoNiin)
+* **[MARTIN Cédric](https://www.linkedin.com/in/cedric-martin-n7/)** - *Initial work* - [HexagoNiin](https://github.com/HexagoNiin)
