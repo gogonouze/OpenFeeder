@@ -1,4 +1,4 @@
-#language : python 3, SQLite
+ #language : python 3, SQLite
 #author : C. Martin, U. EB-LEVADOUX
 #version : 2.0
 #date : 27-01-2020
@@ -28,13 +28,22 @@ def process_fill_up_db(file_name, db_name) :
         print()
         cursor.execute('insert into SITE (Id) select ? where not exists(select * from SITE where Id=(?))',(data['site'],data['site'],))
         cursor.execute('insert into MACHINE (Id,IdSite) select ?,? where not exists(select * from MACHINE where Id=(?))',(data['machine'],data['site'],data['machine'],))
-        cursor.execute('insert into ENTITY (Id,IdCaptureSite, CaptureDate) select ?,?,? where not exists(select * from ENTITY where Id=(?))',(data['entity'],data['site'],data['date'],data['entity'],))
+        cursor.execute('insert into ENTITY (Id,IdCaptureSite) select ?,? where not exists(select * from ENTITY where Id=(?))',(data['entity'],data['site'],data['entity'],))
+
+        cursor.execute('select CaptureDate from ENTITY where Id=(?)',(data['entity'],))
+        date = cursor.fetchone()[0]
+
+        print(date)
+        if date >= data['date'] :
+            cursor.execute('update ENTITY set CaptureDate = (?) where Id = (?)', (data['date'],data['entity'],))
+
+
         cursor.execute('update ENTITY set IdLastVisitedMachine = (?) where  Id = (?)', (data['machine'],data['entity'],))
 
 
 
     file.close()
-    file.open(file_name,"w")
+    file = open(file_name,"w")
     file.write("")
     file.close()
     conn.commit()
@@ -51,14 +60,14 @@ def main() :
         return 1;
 
     file_name = sys.argv[1]
-    if (not os.path.isdir(directory_name)) :
+    if (not os.path.isfile(file_name)) :
         path, script_name = os.path.split(sys.argv[0])
         print("Fichier source introuvable.\n<Usage ",script_name," : \"Fichier source\", \"Base de données déstination\">")
         return 2;
 
 
-    bd_name = sys.argv[2]
-    if (not os.path.isdir(destination_directory)) :
+    db_name = sys.argv[2]
+    if (not os.path.isfile(db_name)) :
         path, script_name = os.path.split(sys.argv[0])
         print("Répertoire destination introuvable.")
         if (not dialog_create_file()) :
@@ -66,6 +75,6 @@ def main() :
             return 2;
 
     process_fill_up_db(file_name, db_name)
-    input('\nOpération terminée.\nAppuyez sur ENTRÉE pour terminer...')
 
 main()
+return 0

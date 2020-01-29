@@ -170,7 +170,8 @@ def main():
         nav = False
 
 main()
-x = input("lol")
 
 module.close()
 navigation.close()
+
+return 0

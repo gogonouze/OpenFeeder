@@ -54,7 +54,6 @@ def main() :
 
     raw_contents_paths = raw_directory_files(directory_name)
     process_log_file_list(raw_contents_paths, destination_directory)
-    input('\nOpération terminée.\nAppuyez sur ENTRÉE pour terminer...')
     return 0;
 
 def raw_directory_files(directory_name):
@@ -108,4 +107,5 @@ def process_log_file(log_file, destination_file):
 
 #Global
 if (main() > 0) :
-    input('\nCode interrompu.\nAppuyez sur ENTRÉE pour terminer...')
+    return 0
+return 1
