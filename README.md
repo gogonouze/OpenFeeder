@@ -1,36 +1,27 @@
-# openfeeder
+# OpenFeeder
+[![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](http://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](http://forthebadge.com)
+## [FR]
+Projet L3 **[CMI](https://reseau-figure.fr)** (Cursus Master Ingénieur) **Informatique** de **[Paul Sabatier](https://www.univ-tlse3.fr)**
 
-Student project of cumputer science.
-Backend : web-site, data base.
+### Backend OpenFeeder :
+* Outils de création et gestion du site web
+* Outils de création et gestion de la base de données
+
+### Pré-requis
+* [WampServer](http://www.wampserver.com) - à jours
+* ou serveur php
+
+### Installation
+
+### Démarrage
+
+### Fabriqué avec
+
+* [Amour](https://fr.wikipedia.org/wiki/Amour)
+* [Atom](https://atom.io) - Text editor
 
 
-## Getting Started
+### Auteurs
+* **[EB-LEVADOUX Ugo](https://www.linkedin.com/in/ugo-eb-levadoux/)** - *Initial work* - [gogonouze](https://github.com/gogonouze)
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-### Installing
-
-## Running the tests
-
-### Break down into end to end tests
-
-### And coding style tests
-
-## Deployment
-
-## Built With
-
-## Contributing
-
-## Versioning
-
-## Authors
-
-* **Eb-Levadoux Ugo** - *Initial work* - [gogonouze](https://github.com/gogonouze)
-* **Martin Cedric** - *Initial work* - [hexagoniin](https://github.com/hexagoniin)
-
-## License
-
-## Acknowledgments
+* **[MARTIN Cédric](https://www.linkedin.com/in/cedric-martin-n7/)** - *Initial work* - [HexagoNiin](https://github.com/HexagoNiin)
