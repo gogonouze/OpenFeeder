@@ -23,11 +23,11 @@ def dialog_create_file() :
     return dialog_check
 
 
-def process_db(sqlite_name, db_name) :
-    conn = sql.connect(db_name)
+def process_db(sqlite_filename, db_filename) :
+    conn = sql.connect(db_filename)
     cursor = conn.cursor()
 
-    file = open(sqlite_name,"r")
+    file = open(sqlite_filename,"r")
     for line in file :
         cursor.execute(line)
 
@@ -39,8 +39,8 @@ def main() :
 
     check = True
     while (check) :
-        sqlite_name = input('Code sql source : ')
-        if (os.path.isfile(sqlite_name)) :
+        sqlite_filename = input('Code sql source : ')
+        if (os.path.isfile(sqlite_filename)) :
             check = False
             print("Fichier trouvé")
             print("")
@@ -51,8 +51,8 @@ def main() :
 
     check = True
     while (check) :
-        db_name = input('Base de donnée destination : ')
-        if (os.path.isfile(db_name)) :
+        db_filename = input('Base de donnée destination : ')
+        if (os.path.isfile(db_filename)) :
             check = False
             print("Fichier trouvé")
             print("")
@@ -60,13 +60,13 @@ def main() :
             check = True
             print("Fichier introuvable")
             if (dialog_create_file()) :
-                f = open(db_name,"w")
+                f = open(db_filename,"w")
                 f.close()
                 check = False
 
             print("")
 
-    process_db(sqlite_name, db_name)
+    process_db(sqlite_filename, db_filename)
     input('\nOpération terminée.\nAppuyez sur ENTRÉE pour terminer...')
 
 main()

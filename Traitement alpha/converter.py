@@ -5,8 +5,15 @@
 
 import os
 import sys
+import re
 
-destination_filename = "readyForDataBase"
+generalData_filename = "generalData" #entity
+extTempData_filename = "extTempData" #temperature
+battery_filename = "battery" #batterie
+udidData_filename = "udidData" #je sais plus
+rfidFreq_filename = "rfidFreq" #frequence rfid
+timCalib_filename = "timCalib" #calibration du temps
+firmware_filename = "firmware" # ???
 
 def dialog_create_directory() :
     dialog_check = False
@@ -17,6 +24,7 @@ def dialog_create_directory() :
             dialog_check = True
             check = False
         elif (c.lower() == "n") :
+            path, script_name = os.path.split(sys.argv[0])
             dialog_check = True
             check = False
         else :
@@ -32,7 +40,6 @@ def main() :
         print("nombre insuffisant d'arguments.\n<Usage ",script_name," : \"Répertoire source\", \"Répertoire destination\">")
         return 1;
     elif (len(sys.argv) > 3 ) :
-        path, script_name = os.path.split(sys.argv[0])
         print("nombre trop important d'arguments.\n<Usage ",script_name," : \"Répertoire source\", \"Répertoire destination\">")
         return 1;
 
@@ -74,28 +81,29 @@ def process_log_file_list(filepath_list, destination_directory):
         log_file = open(path, "r")
         log_filename = log_file.name.lower()
         if(log_filename.endswith('.csv')):
-            if('errors' in log_filename):
-                None
-            elif('rfidfreq'in log_filename):
-                None
-            elif('udid'in log_filename):
-                None
-            elif('exttemp'in log_filename):
-                None
-            elif('firmware'in log_filename):
-                None
-            elif('timcalib'in log_filename):
-                None
-            elif('battery'in log_filename):
-                None
-            else :
-                process_log_file(log_file, destination_directory)
+            print(log_filename)
+            if(re.search("errors\.csv$",log_filename)):
 
-
+            elif(re.search("rfidfreq\.csv$",log_filename)):
+                None
+            elif(re.search("udid\.csv$",log_filename)):
+                None
+            elif(re.search("exttemp\.csv$",log_filename)):
+                None
+            elif(re.search("firmware\.csv$",log_filename)):
+                None
+            elif(re.search("timcalib\.csv$",log_filename)):
+                None
+            elif(re.search("battery\.csv$",log_filename)):
+                None
+            elif(re.search("\d{8}\.csv$",log_filename)):
+                process_generalData_file(log_file, destination_directory, generalData_filename)
 
         log_file.close()
 
-def process_log_file(log_file, destination_file):
+        
+
+def process_log_file(log_file, destination_file, destination_filename):
     """Créé un fichier log sans les lignes inutiles"""
     destination_file = open(os.path.join(destination_file, destination_filename), "a+")
     line=' '
@@ -105,7 +113,14 @@ def process_log_file(log_file, destination_file):
             destination_file.write(line)
     destination_file.close()
 
+
+
+
+
+
+
+main()
 #Global
-if (main() > 0) :
-    return 0
-return 1
+#if (main() > 0) :
+    #return 0
+#return 1

@@ -1,19 +1,19 @@
  #language : python 3, SQLite
 #author : C. Martin, U. EB-LEVADOUX
 #version : 2.0
-#date : 27-01-2020
+#date : 31-01-2020
 
 import sqlite3 as sql
 import os
 import sys
 
-def process_fill_up_db(file_name, db_name) :
-    conn = sql.connect(db_name)
+def process_fill_up_db(data_filename, db_filename) :
+    conn = sql.connect(db_filename)
     cursor = conn.cursor()
 
     data ={'date' : None, 'time': None, 'site': None, 'machine': None, 'scenario': None, 'entity': None}
-    file = open(file_name,"r")
-    for line in file :
+    data_file = open(data_filename,"r")
+    for line in data_file :
         data_brut = line.split(',')
         print(data_brut)
         print()
@@ -42,10 +42,10 @@ def process_fill_up_db(file_name, db_name) :
 
 
 
-    file.close()
-    file = open(file_name,"w")
-    file.write("")
-    file.close()
+    data_file.close()
+    data_file = open(data_filename,"w")
+    data_file.write("")
+    data_file.close()
     conn.commit()
 
 
@@ -59,22 +59,22 @@ def main() :
         print("nombre trop important d'arguments.\n<Usage ",script_name," : \"Fichier source\", \"Base de données déstination\">")
         return 1;
 
-    file_name = sys.argv[1]
-    if (not os.path.isfile(file_name)) :
+    data_filename = sys.argv[1]
+    if (not os.path.isfile(data_filename)) :
         path, script_name = os.path.split(sys.argv[0])
         print("Fichier source introuvable.\n<Usage ",script_name," : \"Fichier source\", \"Base de données déstination\">")
         return 2;
 
 
-    db_name = sys.argv[2]
-    if (not os.path.isfile(db_name)) :
+    db_filename = sys.argv[2]
+    if (not os.path.isfile(db_filename)) :
         path, script_name = os.path.split(sys.argv[0])
         print("Répertoire destination introuvable.")
         if (not dialog_create_file()) :
             print("Base de données déstination introuvable.\n<Usage ",script_name," : \"Fichier source\", \"Base de données déstination\">")
             return 2;
 
-    process_fill_up_db(file_name, db_name)
+    process_fill_up_db(data_filename, db_filename)
 
 main()
 return 0
