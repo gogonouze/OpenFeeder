@@ -1,9 +1,12 @@
 drop table if exists ENTITY
 drop table if exists MACHINE
 drop table if exists SITE
+drop table if exists VISIT
 
 create table if not exists SITE(Id text not null unique primary key, Localisation integer)
 
 create table if not exists MACHINE(Id text not null unique primary key, IdSite text, Status boolean, foreign key(IdSite) references SITE(Id))
 
 create table if not exists ENTITY(Id text not null unique primary key, IdCaptureSite text, CaptureDate date, IdLastVisitedMachine text, foreign key(IdCaptureSite) references SITE(Id), foreign key(IdLastVisitedMachine) references MACHINE(Id))
+
+create table if not exists VISIT(IdEntity text not null unique primary key, IdMachine text not null unique primary key, VisiteDate date, foreign key(IdEntity) references ENTITY(Id), foreign key(IdMachine) references MACHINE(Id))

@@ -9,4 +9,13 @@ def launch_python(script, argv) :
 
 launch_python("DataBase_alpha/fill_up_db.py",["DataBase_alpha/readyForDataBase","DataBase_alpha/bddu"])
 
+
+
+def main() :
+    
+    return 0;
+
+
+if (main() != 0) :
+        input('\nOpération échouée.\nAppuyez sur ENTRÉE pour terminer...')
 input('\nOpération terminée.\nAppuyez sur ENTRÉE pour terminer...')

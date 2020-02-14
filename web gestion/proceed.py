@@ -20,7 +20,7 @@ def setup_module_txt(filepath):
   global id
   copy_txt_file(filepath)
 
-  mod = open(path_web + "/module design/texte.module","r")
+  mod = open(os.path.join(path_web,"/module design/texte.module"),"r") #add
   buf = mod.read()
   buf = buf.replace("$filepath", "\"" + filepath + "\"")
   buf = buf.replace("$id",str(id))
