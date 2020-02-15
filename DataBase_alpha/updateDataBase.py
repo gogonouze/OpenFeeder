@@ -77,4 +77,3 @@ def main() :
     process_fill_up_db(data_filename, db_filename)
 
 main()
-return 0
