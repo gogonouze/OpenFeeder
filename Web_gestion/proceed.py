@@ -2,12 +2,13 @@
 #author : C. Martin, U. EB-LEVADOUX
 #version : 1.0
 #date : 13-10-2019
+#USAGE : proceed.py
 
 from shutil import copyfile
+import os
 
-
-path = "resource/"
-path_web = "../web alpha/resource/"
+path = "./Web_gestion/resource/"
+path_web = "./Web_alpha/resource/"
 
 
 id = 0
@@ -16,18 +17,18 @@ navigation = None
 
 
 def setup_module_txt(filepath):
-  global module
-  global id
-  copy_txt_file(filepath)
+      global module
+      global id
+      copy_txt_file(filepath)
 
-  mod = open(os.path.join(path_web,"/module design/texte.module"),"r") #add
-  buf = mod.read()
-  buf = buf.replace("$filepath", "\"" + filepath + "\"")
-  buf = buf.replace("$id",str(id))
+      mod = open(path_web+"/module design/texte.module","r")
+      buf = mod.read()
+      buf = buf.replace("$filepath", "\"" + filepath + "\"")
+      buf = buf.replace("$id",str(id))
 
-  module.write(buf)
+      module.write(buf)
 
-  mod.close()
+      mod.close()
 
 def setup_module_img(filename, filepath) :
      global module
@@ -117,7 +118,7 @@ def main():
 
     init()
 
-    configuration = open("configuration.txt")
+    configuration = open("./Web_gestion/configuration.txt")
 
     nav = False
     for line in configuration:
@@ -136,7 +137,6 @@ def main():
             filename = filename[:-4]
 
         setup_module_txt(filepath)
-
 
       elif(line.startswith('(image)')):
         filename = line[7:].lstrip().rstrip()[:]
@@ -162,6 +162,7 @@ def main():
 
           setup_module_chart()
 
+          setup_module_txt(filepath)
       elif(line.startswith('(information)')):
         setup_module_info()
 
@@ -173,5 +174,3 @@ main()
 
 module.close()
 navigation.close()
-
-return 0

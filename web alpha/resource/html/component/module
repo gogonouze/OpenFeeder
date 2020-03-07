@@ -1,7 +1,0 @@
-<div class="splendor" id="1">
-  <p class="herbOfLife">
-    <?php
-      display("pierre.txt");
-    ?>
-  </p>
-</div>

@@ -83,7 +83,7 @@ def process_log_file_list(filepath_list, destination_directory):
         if(log_filename.endswith('.csv')):
             print(log_filename)
             if(re.search("errors\.csv$",log_filename)):
-
+                None
             elif(re.search("rfidfreq\.csv$",log_filename)):
                 None
             elif(re.search("udid\.csv$",log_filename)):
@@ -101,9 +101,9 @@ def process_log_file_list(filepath_list, destination_directory):
 
         log_file.close()
 
-        
 
-def process_log_file(log_file, destination_file, destination_filename):
+
+def process_generalData_file(log_file, destination_file, destination_filename):
     """Créé un fichier log sans les lignes inutiles"""
     destination_file = open(os.path.join(destination_file, destination_filename), "a+")
     line=' '

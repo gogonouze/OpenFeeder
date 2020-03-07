@@ -1,0 +1,111 @@
+<div class="splendor" id="1">
+  <p class="herbOfLife">
+    <?php
+      display("pierre.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="2">
+  <p class="herbOfLife">
+    <?php
+      display("pierre.txt");
+    ?>
+  </p>
+</div>
+<div class="floral">
+  <img src="resource/img/borderlands.jpg" alt="borderlands" class="beauty" id="3">
+</div>
+<div class="splendor" id="4">
+  <p class="herbOfLife">
+    <?php
+      display("les baguettes de romain.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="5">
+  <p class="herbOfLife">
+    <?php
+      display("test.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="6">
+  <p class="herbOfLife">
+    <?php
+      display("les baguettes de romain.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="7">
+  <p class="herbOfLife">
+    <?php
+      display("les baguettes de romain.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="8">
+  <p class="herbOfLife">
+    <?php
+      display("les baguettes de romain.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="9">
+  <p class="herbOfLife">
+    <?php
+      display("les baguettes de romain.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="10">
+  <p class="herbOfLife">
+    <?php
+      display("les baguettes de romain.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="11">
+  <p class="herbOfLife">
+    <?php
+      display("les baguettes de romain.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="12">
+  <p class="herbOfLife">
+    <?php
+      display("les baguettes de romain.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="13">
+  <p class="herbOfLife">
+    <?php
+      display("les baguettes de romain.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="14">
+  <p class="herbOfLife">
+    <?php
+      display("les baguettes de romain.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="15">
+  <p class="herbOfLife">
+    <?php
+      display("les baguettes de romain.txt");
+    ?>
+  </p>
+</div>
+<div class="splendor" id="16">
+  <p class="herbOfLife">
+    <?php
+      display("les baguettes de romain.txt");
+    ?>
+  </p>
+</div>
+<div class="floral">
+  <img src="resource/img/borderlands.jpg" alt="borderlands" class="beauty" id="17">
+</div>

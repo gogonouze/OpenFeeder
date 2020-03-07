@@ -1,7 +1,9 @@
- #language : python 3, SQLite
+#language : python 3, SQLite
 #author : C. Martin, U. EB-LEVADOUX
 #version : 2.0
 #date : 31-01-2020
+#USAGE : updateDataBase.py treated_data dataBase
+
 
 import sqlite3 as sql
 import os
@@ -28,17 +30,9 @@ def process_fill_up_db(data_filename, db_filename) :
         print()
         cursor.execute('insert into SITE (Id) select ? where not exists(select * from SITE where Id=(?))',(data['site'],data['site'],))
         cursor.execute('insert into MACHINE (Id,IdSite) select ?,? where not exists(select * from MACHINE where Id=(?))',(data['machine'],data['site'],data['machine'],))
-        cursor.execute('insert into ENTITY (Id,IdCaptureSite) select ?,? where not exists(select * from ENTITY where Id=(?))',(data['entity'],data['site'],data['entity'],))
+        cursor.execute('insert into ENTITY (Id) select ? where not exists(select * from ENTITY where Id=(?))',(data['entity'],data['entity'],))
 
-        cursor.execute('select CaptureDate from ENTITY where Id=(?)',(data['entity'],))
-        date = cursor.fetchone()[0]
-
-        print(date)
-        if date >= data['date'] :
-            cursor.execute('update ENTITY set CaptureDate = (?) where Id = (?)', (data['date'],data['entity'],))
-
-
-        cursor.execute('update ENTITY set IdLastVisitedMachine = (?) where  Id = (?)', (data['machine'],data['entity'],))
+        cursor.execute('insert into VISIT (IdEntity, IdMachine, VisitDate) select ?,?,? where not exists(select * from VISIT where IdEntity=(?) and IdMachine=(?) and VisitDate=(?))',(data['entity'],data['machine'],data['date'],data['entity'],data['machine'],data['date'],))
 
 
 

@@ -7,6 +7,6 @@ create table if not exists SITE(Id text not null unique primary key, Localisatio
 
 create table if not exists MACHINE(Id text not null unique primary key, IdSite text, Status boolean, foreign key(IdSite) references SITE(Id))
 
-create table if not exists ENTITY(Id text not null unique primary key, IdCaptureSite text, CaptureDate date, IdLastVisitedMachine text, foreign key(IdCaptureSite) references SITE(Id), foreign key(IdLastVisitedMachine) references MACHINE(Id))
+create table if not exists ENTITY(Id text not null unique primary key)
 
-create table if not exists VISIT(IdEntity text not null unique primary key, IdMachine text not null unique primary key, VisiteDate date, foreign key(IdEntity) references ENTITY(Id), foreign key(IdMachine) references MACHINE(Id))
+create table if not exists VISIT(Id integer primary key AUTOINCREMENT, IdEntity text not null, IdMachine text not null, VisitDate date, foreign key(IdEntity) references ENTITY(Id), foreign key(IdMachine) references MACHINE(Id))
