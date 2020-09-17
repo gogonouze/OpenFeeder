@@ -16,96 +16,28 @@
   <img src="resource/img/borderlands.jpg" alt="borderlands" class="beauty" id="3">
 </div>
 <div class="splendor" id="4">
-  <p class="herbOfLife">
-    <?php
-      display("les baguettes de romain.txt");
-    ?>
-  </p>
+  <button id="button_4" type="button">Faire une requête</button>
+  //<div id="text_4"></div>
+  <canvas id="chart_4"></canvas>
 </div>
-<div class="splendor" id="5">
-  <p class="herbOfLife">
-    <?php
-      display("test.txt");
-    ?>
-  </p>
+
+<script>
+  document.getElementById("button_4").addEventListener('click', makeRequest_4);
+  function makeRequest_4 () {
+    div_id = "4";
+    text_id = "text_4";
+    chart_id = "chart_4";
+    function_type = update_text;
+    data = "";
+    communication();
+  }
+</script><div class="floral">
+  <img src="resource/img/borderlands.jpg" alt="borderlands" class="beauty" id="5">
 </div>
 <div class="splendor" id="6">
   <p class="herbOfLife">
     <?php
-      display("les baguettes de romain.txt");
+      display("pierre.txt");
     ?>
   </p>
-</div>
-<div class="splendor" id="7">
-  <p class="herbOfLife">
-    <?php
-      display("les baguettes de romain.txt");
-    ?>
-  </p>
-</div>
-<div class="splendor" id="8">
-  <p class="herbOfLife">
-    <?php
-      display("les baguettes de romain.txt");
-    ?>
-  </p>
-</div>
-<div class="splendor" id="9">
-  <p class="herbOfLife">
-    <?php
-      display("les baguettes de romain.txt");
-    ?>
-  </p>
-</div>
-<div class="splendor" id="10">
-  <p class="herbOfLife">
-    <?php
-      display("les baguettes de romain.txt");
-    ?>
-  </p>
-</div>
-<div class="splendor" id="11">
-  <p class="herbOfLife">
-    <?php
-      display("les baguettes de romain.txt");
-    ?>
-  </p>
-</div>
-<div class="splendor" id="12">
-  <p class="herbOfLife">
-    <?php
-      display("les baguettes de romain.txt");
-    ?>
-  </p>
-</div>
-<div class="splendor" id="13">
-  <p class="herbOfLife">
-    <?php
-      display("les baguettes de romain.txt");
-    ?>
-  </p>
-</div>
-<div class="splendor" id="14">
-  <p class="herbOfLife">
-    <?php
-      display("les baguettes de romain.txt");
-    ?>
-  </p>
-</div>
-<div class="splendor" id="15">
-  <p class="herbOfLife">
-    <?php
-      display("les baguettes de romain.txt");
-    ?>
-  </p>
-</div>
-<div class="splendor" id="16">
-  <p class="herbOfLife">
-    <?php
-      display("les baguettes de romain.txt");
-    ?>
-  </p>
-</div>
-<div class="floral">
-  <img src="resource/img/borderlands.jpg" alt="borderlands" class="beauty" id="17">
 </div>

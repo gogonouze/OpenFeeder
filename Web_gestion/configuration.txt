@@ -1,17 +1,6 @@
 (texte) pierre.txt (nav)
-(texte) pierre.txt
+(texte) pierre 
 (image) borderlands
-(texte) les baguettes de romain (nav)
-(texte) test.txt
-(texte) les baguettes de romain (nav)
-(texte) les baguettes de romain (nav)
-(texte) les baguettes de romain (nav)
-(texte) les baguettes de romain (nav)
-(texte) les baguettes de romain (nav)
-(texte) les baguettes de romain (nav)
-(texte) les baguettes de romain (nav)
-(texte) les baguettes de romain (nav)
-(texte) les baguettes de romain (nav)
-(texte) les baguettes de romain (nav)
-(texte) les baguettes de romain (nav)
-(image) borderlands (nav)
+(graphique)
+(image) borderlands
+(texte) pierre (nav)

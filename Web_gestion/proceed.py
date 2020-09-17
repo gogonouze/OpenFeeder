@@ -96,8 +96,6 @@ def init():
     navigation = open(path_web + "html/component/navigation", "a")
 
 
-
-
 def copy_txt_file(filepath):
     destination_file_path = path_web + "/txt/"+ filepath
     source_file_path = path + filepath
@@ -156,13 +154,13 @@ def main():
 
 
       elif(line.startswith('(graphique)')):
-          if (filename.endswith('(nav)')) :
-              filename = "Graphique"
-              nav = True
+        if (filename.endswith('(nav)')) :
+            filename = "Graphique"
+            nav = True
 
-          setup_module_chart()
+        setup_module_chart()
 
-          setup_module_txt(filepath)
+          
       elif(line.startswith('(information)')):
         setup_module_info()
 

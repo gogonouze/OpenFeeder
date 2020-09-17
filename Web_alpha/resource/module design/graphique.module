@@ -1,3 +1,17 @@
 <div class="splendor" id="$id">
-  <div id="columnchart_values" ></div>
+  <button id="button_$id" type="button">Faire une requête</button>
+  <div id="text_$id"></div>
+  <canvas id="chart_$id"></canvas>
 </div>
+
+<script>
+  document.getElementById("button_$id").addEventListener('click', makeRequest_$id);
+  function makeRequest_$id () {
+    div_id = "$id";
+    text_id = "text_$id";
+    chart_id = "chart_$id";
+    function_type = update_text;
+    data = "";
+    communication();
+  }
+</script>

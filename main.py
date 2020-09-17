@@ -133,8 +133,6 @@ def main() :
         else :
             print("Evénement inconnu : ",event)
             return 1
-
-        input()
         cls()
 
     return 0
