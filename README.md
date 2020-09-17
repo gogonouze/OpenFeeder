@@ -18,7 +18,8 @@ Projet L3 **[CMI](https://reseau-figure.fr)** (Cursus Master Ingénieur) **Infor
 ### Fabriqué avec
 
 * [Amour](https://fr.wikipedia.org/wiki/Amour)
-* [Atom](https://atom.io) - Text editor
+* [Atom](https://atom.io) - éditeur de texte
+* [Visual Studio Code](https://code.visualstudio.com/) - éditeur de texte
 
 
 ### Auteurs
