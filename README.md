@@ -7,6 +7,11 @@ Projet L3 **[CMI](https://reseau-figure.fr)** (Cursus Master Ingénieur) **Infor
 * Outils de création et gestion du site web
 * Outils de création et gestion de la base de données
 
+### Langages :
+* [Python3](https://www.python.org/) gestion de la base de données et gestion du site web
+* [PHP](https://www.php.net/) communication entre le site web et la base de données (serveur)
+* [AJAX](https://fr.wikipedia.org/wiki/Ajax_(informatique))(JavaScript) communication entre le site web et la base de données (client)
+
 ### Pré-requis
 * [WampServer](http://www.wampserver.com) - à jours
 * ou serveur php
